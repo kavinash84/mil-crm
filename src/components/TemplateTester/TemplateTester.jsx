@@ -118,8 +118,6 @@ function TemplateTester() {
                 p: 0.65,
                 '& p': {
                   fontSize: { xs: 10, sm: 14, md: 16 },
-                  textShadow:
-                    mode === 'dark' ? '0px 0px 10px #000' : '0px 0px 10px #fff',
                 },
               }}
             >
