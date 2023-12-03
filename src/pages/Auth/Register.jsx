@@ -58,7 +58,7 @@ function Register() {
   }, []);
 
   return (
-    <AuthOutlet>
+    <AuthOutlet header="Login">
       <Stack direction="row" gap={3} sx={{ alignItems: 'center' }}>
         <TextField
           inputRef={ad}

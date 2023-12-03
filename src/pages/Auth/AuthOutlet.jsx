@@ -1,36 +1,38 @@
 import React from 'react';
 import { Stack, useTheme, Typography } from '@mui/material';
 import { FormSX } from './Auth.styles';
+import loginBgImage from '@/assets/images/login_page_bg.png';
 
 function AuthOutlet({ children, header }) {
   const theme = useTheme();
   return (
-    <form>
-      <Stack
-        gap={3}
-        sx={{
-          ...FormSX,
-          border: `1px solid ${theme.palette.grey.border}`,
-          background: theme.palette.grey[50],
-        }}
-      >
-        {header ? (
-          <Typography textAlign="center" variant="h2">
-            {header}
-          </Typography>
-        ) : (
-          <img
-            src={
-              theme.palette.mode === 'dark'
-                ? 'https://picsum.photos/100/50'
-                : 'https://picsum.photos/200/300'
-            }
-            alt="logo"
-          />
-        )}
-        {children}
-      </Stack>
-    </form>
+    <div
+      style={{
+        backgroundImage: `url(${loginBgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '100vh',
+      }}
+    >
+      <form>
+        <Stack
+          gap={3}
+          sx={{
+            ...FormSX,
+            border: `1px solid ${theme.palette.grey[100]}`,
+            backgroundColor: '#f5f5f5f7',
+          }}
+        >
+          {header && (
+            <Typography textAlign="left" variant="h1Hero">
+              {header}
+            </Typography>
+          )}
+          {children}
+        </Stack>
+      </form>
+    </div>
   );
 }
 

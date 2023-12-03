@@ -7,17 +7,22 @@ import {
   Button,
   Link,
   IconButton,
+  FormControl,
+  InputLabel,
 } from '@mui/material';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useRef, useState } from 'react';
+import { useTheme } from '@emotion/react';
 import AuthOutlet from './AuthOutlet';
+// import loginBgImage from '@/assets/images/login_page_bg.png';
 
 function Login() {
   const email = useRef(null);
   const password = useRef(null);
   const navigate = useNavigate();
+  const theme = useTheme();
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
@@ -43,15 +48,25 @@ function Login() {
   }, []);
 
   return (
-    <AuthOutlet>
+    <AuthOutlet header="Login">
       <TextField
         inputRef={email}
         type="email"
         label="E-mail"
         variant="outlined"
         autoComplete="off"
+        required
+        size="small"
       />
-      <Stack gap={1}>
+
+      <FormControl variant="standard">
+        <InputLabel shrink htmlFor="bootstrap-input">
+          Bootstrap
+        </InputLabel>
+        {/* <BootstrapInput defaultValue="react-bootstrap" id="bootstrap-input" /> */}
+      </FormControl>
+
+      <Stack gap={3}>
         <TextField
           inputRef={password}
           type={showPassword ? 'text' : 'password'}
@@ -75,18 +90,19 @@ function Login() {
           }}
         />
         <Link
-          variant="body2"
+          variant="CTA2"
           textAlign="right"
           onClick={() => navigate('/forgot-password')}
+          // sx={{ fontSize: '16px !important', weight: '300 !important', color: '#3d3d3d !important' }}
         >
           Forgot password?
         </Link>
 
         <Button variant="contained" onClick={loginHandler}>
-          Sign in
+          Login
         </Button>
       </Stack>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      {/* <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Typography variant="body2" component="p">
           Dont you have an account?
         </Typography>
@@ -97,7 +113,7 @@ function Login() {
         >
           Register
         </Link>
-      </Box>
+      </Box> */}
     </AuthOutlet>
   );
 }

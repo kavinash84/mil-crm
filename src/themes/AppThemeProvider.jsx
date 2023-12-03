@@ -83,8 +83,15 @@ function AppThemeProvider({ children }) {
       },
 
       typography: {
-        fontFamily: 'Dosis, sans-serif',
+        fontFamily: 'Mitr, sen, sans-serif',
 
+        h1Hero: {
+          fontSize: '45px !important',
+          fontWeight: '700',
+          fontFamily: 'sen',
+          color: '#3D3D3D',
+          // lineHeight: '33px',
+        },
         h1: {
           fontSize: '26px',
           fontWeight: '600',
