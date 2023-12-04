@@ -87,7 +87,7 @@ function TemplateTester() {
       gap={2}
     >
       <Typography variant="h3">{type}</Typography> {func}
-      <IconButton
+      {/* <IconButton
         onClick={() => dispatch(changeMode())}
         sx={{ position: 'absolute', top: 10, right: 10 }}
       >
@@ -97,7 +97,7 @@ function TemplateTester() {
             transform: mode === 'dark' ? 'rotateY(180deg)' : 'rotateY(0deg)',
           }}
         />
-      </IconButton>
+      </IconButton> */}
     </Stack>
   );
 

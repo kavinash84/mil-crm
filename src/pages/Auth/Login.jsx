@@ -56,15 +56,14 @@ function Login() {
         variant="outlined"
         autoComplete="off"
         required
-        size="small"
       />
 
-      <FormControl variant="standard">
+      {/* <FormControl variant="standard">
         <InputLabel shrink htmlFor="bootstrap-input">
           Bootstrap
         </InputLabel>
-        {/* <BootstrapInput defaultValue="react-bootstrap" id="bootstrap-input" /> */}
-      </FormControl>
+        <BootstrapInput defaultValue="react-bootstrap" id="bootstrap-input" />
+      </FormControl> */}
 
       <Stack gap={3}>
         <TextField
@@ -92,7 +91,7 @@ function Login() {
         <Link
           variant="CTA2"
           textAlign="right"
-          onClick={() => navigate('/forgot-password')}
+          // onClick={() => navigate('/forgot-password')}
           // sx={{ fontSize: '16px !important', weight: '300 !important', color: '#3d3d3d !important' }}
         >
           Forgot password?

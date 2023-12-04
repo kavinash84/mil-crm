@@ -13,7 +13,7 @@ export const FormSX = {
   width: { xs: '90%', sm: 540 },
   minHeight: { xs: '90%', sm: 500 },
   transform: 'translate(-50%, -50%)',
-  padding: '40px',
+  padding: '50px',
 
   img: {
     p: '16px 32px',
